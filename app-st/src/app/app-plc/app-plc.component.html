@@ -1,0 +1,33 @@
+<div class="border-form">
+  <h3>Warning</h3>
+<form #plcForm="ngForm" (ngSubmit)="plcSubmit(plcForm)">
+<div>
+<!--  <label for="adrIP">ip address:</label>-->
+  <input type="text" id="adrIP" [(ngModel)]="plcDataL.adrIP" name="adrIP" ngModel placeholder="ip address: ">
+
+<!--  <label for="lengthRead">length read:</label>-->
+  <input id="lengthRead" [(ngModel)]="plcDataL.lengthRead" name="lengthRead" ngModel placeholder="length read:">
+
+<!--  <label for="lengthWrite">length write:</label>-->
+  <input id="lengthWrite" [(ngModel)]="plcDataL.lengthWrite" name="lengthWrite" ngModel placeholder="length write:">
+
+<!--  <label for="dbRead">dbRead:</label>-->
+  <input id="dbRead" [(ngModel)]="plcDataL.dbRead" name="dbRead" ngModel placeholder="DB Read:">
+
+<!--  <label for="dbWrite">dbWrite:</label>-->
+  <input id="dbWrite" [(ngModel)]="plcDataL.dbWrite" name="dbWrite" ngModel placeholder="DB Write:">
+
+<!--  <label for="rack">rack:</label>-->
+  <input id="rack" [(ngModel)]="plcDataL.rack" name="rack" ngModel placeholder="rack:">
+
+<!--  <label for="slot">slot:</label>-->
+  <input id="slot" [(ngModel)]="plcDataL.slot" name="slot" ngModel placeholder="slot">
+
+  <button type="submit">Submit</button>
+</div>
+
+</form>
+</div>
+<div>
+  <p>{{answerPLCData|json}}</p>
+</div>

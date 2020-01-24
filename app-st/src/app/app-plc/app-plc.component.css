@@ -1,0 +1,58 @@
+h3{
+  padding: 5px;
+  animation-name: color-text;
+  animation-duration: 5s ;
+  animation-iteration-count: infinite;
+}
+@keyframes color-text {
+  0%{color: darkred}
+  50%{color: orangered}
+  100%{color: red}
+
+}
+input{
+  margin: 2px;
+  border: none;
+  border-bottom: 1px solid orangered ;
+  max-width: 100px;
+  width: auto;
+  background-color: darkgrey;
+  text-align: center;
+opacity: 0.4;
+
+}
+input:hover{
+  margin: 10px;
+  border: none;
+  border-bottom: 3px solid blue ;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  z-index: 7;
+  background-color: darkgrey;
+  opacity: 0.7;
+  text-align: center;
+}
+input::placeholder{
+  color: darkred;
+}
+button{
+  margin: 5px;
+  border: 1px solid orangered;
+  border-radius: 4px;
+  width: 75px;
+  color: whitesmoke;
+  background: rgb(139,139,143);
+  background: linear-gradient(335deg, rgba(139,139,143,1) 0%, rgba(108,108,128,1) 35%, rgba(0,0,0,1) 100%);
+}
+.border-form{
+  /*display: inline-block;*/
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 120px;
+  border: 1px solid orangered;
+  border-radius: 2px;
+  background: rgb(139,139,143);
+  background: linear-gradient(335deg, rgba(139,139,143,1) 0%, rgba(108,108,128,1) 35%, rgba(0,0,0,1) 100%);
+}
