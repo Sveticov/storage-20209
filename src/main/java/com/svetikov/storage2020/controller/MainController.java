@@ -51,11 +51,21 @@ public class MainController {
     }
 
     @PostMapping("/plc/newplc")
-    public ResponseEntity<PLCData> newPLCData(@RequestBody PLCData plcData){
+    public ResponseEntity<List<PLCData>> newPLCData(@RequestBody PLCData plcData){
         log.info(plcData.toString());
         if(plcData.getAdrIP().equals(null)&plcData.getDbRead()==0)return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
         plcRepository.saveModel(plcData);
-        return new ResponseEntity<>(plcData,HttpStatus.OK);
+        return new ResponseEntity<>(plcRepository.getAllModel(),HttpStatus.OK);
+    }
+    @GetMapping("/plc/all")
+    public ResponseEntity<List<PLCData>> allPLCs(){
+        return new ResponseEntity<>(plcRepository.getAllModel(),HttpStatus.OK);
+    }
+    @GetMapping("/plc/delete/{id}")
+    public ResponseEntity<List<PLCData>> deletePLC(@PathVariable("id")int id){
+        PLCData plcData=plcRepository.getModelBuID(id);
+        plcRepository.deleteModel(id);
+        return new ResponseEntity<>(plcRepository.getAllModel(),HttpStatus.OK);
     }
 
 }

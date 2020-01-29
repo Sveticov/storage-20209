@@ -44,6 +44,10 @@ public class PLCComponent {
         }
     }
 
+    public PLC getPlc() {
+        return plc;
+    }
+
     private class PLCListenerImpl implements PLCListener {
         @Override
         public void PLCBitChanged(int address, int pos, boolean val, String plcName) {

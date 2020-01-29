@@ -1,5 +1,6 @@
 
 .area-work {
+  margin: 2px;
   position: absolute;
   top: 120px;
   left: 20px;
@@ -16,6 +17,9 @@
   top: 155px;
   left: 100px;
 }
+.car1 img{
+  box-shadow: 1px 1px darkred;
+}
 
 .satelit1-car1 {
   margin: 0;
@@ -23,6 +27,12 @@
   position: absolute;
   top: 150px;
   left: 110px;
+}
+.satelit1-car1 img{
+  box-shadow: 1px 1px darkred;
+}
+.satelit2-car1 img{
+  box-shadow: 1px 1px darkred;
 }
 
 .satelit2-car1 {
@@ -40,6 +50,10 @@
   position: absolute;
   top: 155px;
   left: 700px;
+
+}
+.car2 img{
+  box-shadow: 1px 1px darkred;
 }
 
 .satelit1-car2 {
@@ -57,6 +71,14 @@
   top: 159px;
   left: 710px;
 }
+.satelit1-car2 img{
+  box-shadow: 1px 1px darkred;
+}
+.satelit2-car2 img{
+  box-shadow: 1px 1px darkred;
+}
 .board{
+  position: absolute;
   opacity: 0.9;
 }
+

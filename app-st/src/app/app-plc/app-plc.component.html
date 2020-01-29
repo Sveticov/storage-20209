@@ -27,7 +27,15 @@
 </div>
 
 </form>
+
+  <div>
+    <ul *ngFor="let plc of plcDataAll">
+      <li>{{plc|json}}
+      <button (click)="onDeletePLC(plc.id)">Delete</button> </li>
+    </ul>
+  </div>
 </div>
-<div>
-  <p>{{answerPLCData|json}}</p>
-</div>
+<!--<div>-->
+<!--  <p>{{answerPLCData|json}}</p>-->
+<!--</div>-->
+

@@ -11,11 +11,18 @@ export class AppPlcServiceService {
   private readonly host:string
 
   constructor(private http: HttpClient) {
-    this.host = 'http://localhost:8080/app/'
+    this.host = 'http://localhost:8080/app/plc/'
   }
 
   onAddNewPLC(plc:PLCData):Observable<any>{
-    return this.http.post<PLCData>(this.host+'/plc/newplc',plc)
+    return this.http.post<PLCData>(this.host+'newplc',plc)
+  }
+  onAllPLCData():Observable<any>{
+    console.log("call all plc_s")
+    return this.http.get(this.host+"all")
+  }
+  onDeletePLCData(id:number):Observable<any>{
+    return this.http.get(this.host+'delete/'+id)
   }
 
 

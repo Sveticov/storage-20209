@@ -50,9 +50,17 @@ button{
   text-align: center;
   margin: 0;
   padding: 0;
-  height: 120px;
+  height: auto;
   border: 1px solid orangered;
   border-radius: 2px;
   background: rgb(139,139,143);
   background: linear-gradient(335deg, rgba(139,139,143,1) 0%, rgba(108,108,128,1) 35%, rgba(0,0,0,1) 100%);
+}
+li{
+  text-align: left;
+  color: whitesmoke;
+  font-size: 12px;
+  font-family: Arial;
+  list-style: none;
+
 }

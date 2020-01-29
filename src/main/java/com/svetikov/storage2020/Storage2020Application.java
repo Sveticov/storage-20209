@@ -1,9 +1,9 @@
 package com.svetikov.storage2020;
 
 import com.svetikov.storage2020.component.PLCComponent;
-import com.svetikov.storage2020.models.BoardBox;
-import com.svetikov.storage2020.models.PLCData;
+import com.svetikov.storage2020.models.*;
 import com.svetikov.storage2020.service.ModelService;
+import com.svetikov.storage2020.service.ServiceCarPosition;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,6 +21,13 @@ public class Storage2020Application implements CommandLineRunner {
     private final PLCComponent plcComponent;
 
     @Autowired
+    @Qualifier("car1")
+    ServiceCarPosition serviceCarPosition1;
+    @Autowired
+    @Qualifier("car2")
+    ServiceCarPosition serviceCarPosition2;
+
+    @Autowired
     public Storage2020Application(@Qualifier("plc") ModelService modelService,@Qualifier("board")ModelService modeBoxService, PLCComponent plcComponent) {
         this.modelService = modelService;
         this.modelBoxService=modeBoxService;
@@ -35,19 +42,19 @@ public class Storage2020Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("start test");
-        PLCData plcData = new PLCData(
-                "192.168.0.190",
-                8,
-                32,
-                1,
-                0,
-                0,
-                2
-        );
-
-
-
-        modelService.saveModel(plcData);
+//        PLCData plcData = new PLCData(
+//                "192.168.0.190",
+//                8,
+//                32,
+//                1,
+//                0,
+//                0,
+//                2
+//        );
+//
+//
+//
+//        modelService.saveModel(plcData);
 //        Thread.sleep(3000);
 //        plcComponent.onInitPLC();
 //        plcComponent.onInitDBAreaPLC();
@@ -55,6 +62,10 @@ public class Storage2020Application implements CommandLineRunner {
 
         BoardBox boardBox=new BoardBox(1,1,1,1,1);
 modelBoxService.saveModel(boardBox);
+
+
+serviceCarPosition1.setPositionCar(120,340);
+serviceCarPosition2.setPositionCar(700,600);
 
 
     }

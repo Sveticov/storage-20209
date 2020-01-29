@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {PLCData} from "./model/PLCData";
 import {Observable} from "rxjs";
 import {AppPlcServiceService} from "./service/app-plc-service.service";
+import {delay, timeout} from "rxjs/operators";
 
 
 @Component({
@@ -14,24 +15,28 @@ import {AppPlcServiceService} from "./service/app-plc-service.service";
 export class AppPlcComponent implements OnInit {
 
   plcDataL: PLCData
-  answerPLCData:any
+  plcDataAll: PLCData[]
+  answerPLCData: any
 
-  constructor(private plcService:AppPlcServiceService) {
-    this.plcDataL=new PLCData()
+  constructor(private plcService: AppPlcServiceService) {
+    this.plcDataL = new PLCData()
   }
 
   ngOnInit() {
+    this.plcService.onAllPLCData().subscribe(plcs => this.plcDataAll = plcs)
   }
 
 
   plcSubmit(plcForm: NgForm) {
     console.log(plcForm.value)
 
-  this.plcService.onAddNewPLC(this.plcDataL).subscribe(p=>{console.log(p);
-  })
-
+    this.plcService.onAddNewPLC(this.plcDataL).subscribe(plcs => this.plcDataAll=plcs)
 
   }
 
 
+  onDeletePLC(id: number) {
+    this.plcService.onDeletePLCData(id).subscribe(plcs => this.plcDataAll=plcs)
+
+  }
 }

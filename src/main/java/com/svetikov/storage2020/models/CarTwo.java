@@ -1,20 +1,19 @@
 package com.svetikov.storage2020.models;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @ToString
 @EqualsAndHashCode
-public class CarOne extends Car{
+public class CarTwo extends Car {
 
 
-    public CarOne(int positionX, int positionZ,boolean busy) {
+    public CarTwo(int positionX, int positionZ,boolean busy) {
         super(positionX, positionZ,busy);
     }
 
-    public CarOne() {
-        super();
+    public CarTwo() {
+
     }
 
     @Override
