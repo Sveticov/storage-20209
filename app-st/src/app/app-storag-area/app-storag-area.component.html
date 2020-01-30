@@ -20,6 +20,16 @@
   <img src="../assets/box_boards.jpg" height="22" width="43"/>
 </div>
 
+<div class="wrap-board">
+  <ul *ngFor="let board of boards">
+    <li >
+      <div class="board"  [ngStyle]="{'top':board.positionYBox+'px','left':board.positionXBox+'px'}" >
+<!--        <img src="../assets/box_boards.jpg" height="22" width="43" />-->
+      </div>
+    </li>
+  </ul>
+</div>
+
 
 
 
@@ -46,3 +56,4 @@
 </div>
 <button (click)="onPositionCarOne()">car1</button>
 <button (click)="onPositionCarTwo()">car2</button>
+<button (click)="onTestBoardStandStillCarOne()">board car1</button>

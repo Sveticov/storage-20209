@@ -5,6 +5,8 @@ import {CarTwo} from "./model/CarTwo";
 
 import {SatelitCarOne} from "./model/SatelitCarOne";
 import {SatelitCarTwo} from "./model/SatelitCarTwo";
+import {BoardService} from "./service/board.service";
+import {Board} from "./model/Board";
 
 @Component({
   selector: 'app-app-storag-area',
@@ -18,8 +20,10 @@ export class AppStoragAreaComponent implements OnInit {
   carTwo: CarTwo;
   satelitCarOne:SatelitCarOne;
   satelitCarTwo:SatelitCarTwo;
+  boards:Board[]
 
-  constructor(private carService: CarServiceService) {
+  constructor(private carService: CarServiceService,
+              private boardService:BoardService) {
     this.carOne=new CarOne('0px','0px',false)
     this.carTwo=new CarTwo('0px','0px',false)
     this.satelitCarOne=new SatelitCarOne(0,0,0,0,true)
@@ -43,18 +47,16 @@ export class AppStoragAreaComponent implements OnInit {
     console.log('pos 1: '+this.carOne.positionX)
     console.log('pos 1: '+this.carOne.positionZ)
 
-    this.satelitCarOne.positionX1=parseInt(this.carOne.positionX)
-    this.satelitCarOne.positionX2=parseInt(this.carOne.positionX)
-    this.satelitCarOne.positionZ1=parseInt(this.carOne.positionZ)+5
-    this.satelitCarOne.positionZ2=parseInt(this.carOne.positionZ)-5
   }
   onPositionCarTwo(){
     this.carService.onPositionCarTwo().subscribe(car=>this.carTwo=car)
     console.log('pos 2: '+this.carTwo.positionX)
     console.log('pos 2:'+this.carTwo.positionZ)
-    this.satelitCarTwo.positionX1=parseInt(this.carTwo.positionX)
-    this.satelitCarTwo.positionX2=parseInt(this.carTwo.positionX)
-    this.satelitCarTwo.positionZ1=parseInt(this.carTwo.positionZ)+5
-    this.satelitCarTwo.positionZ2=parseInt(this.carTwo.positionZ)-5
+
+  }
+  onTestBoardStandStillCarOne(){
+this.boardService.onTestBoard(parseInt(this.carOne.positionX),parseInt(this.carOne.positionZ))
+  .subscribe(boards=>{this.boards=boards;console.log(boards);})
+
   }
 }

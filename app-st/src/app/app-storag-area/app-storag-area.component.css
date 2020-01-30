@@ -77,8 +77,16 @@
 .satelit2-car2 img{
   box-shadow: 1px 1px darkred;
 }
+.wrap-board ul{
+  list-style: none;
+}
 .board{
   position: absolute;
+  width:43px;
+  height:22px ;
+  background: yellow;
+  box-shadow: 3px 3px orange;
   opacity: 0.9;
+  z-index: 9;
 }
 
