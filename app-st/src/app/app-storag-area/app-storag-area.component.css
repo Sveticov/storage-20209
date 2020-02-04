@@ -1,12 +1,15 @@
+* {
+  font-family: Calibri;
+
+}
 
 .area-work {
   margin: 2px;
   position: absolute;
-  top: 120px;
-  left: 20px;
-  width: 1300px;
+  margin: 0;
+  width: auto;
   height: 570px;
-  background-color: darkgray;
+  background: rgb(15, 15, 15);
   border: 1px solid black;
 }
 
@@ -17,7 +20,8 @@
   top: 155px;
   left: 100px;
 }
-.car1 img{
+
+.car1 img {
   box-shadow: 1px 1px darkred;
 }
 
@@ -28,10 +32,12 @@
   top: 150px;
   left: 110px;
 }
-.satelit1-car1 img{
+
+.satelit1-car1 img {
   box-shadow: 1px 1px darkred;
 }
-.satelit2-car1 img{
+
+.satelit2-car1 img {
   box-shadow: 1px 1px darkred;
 }
 
@@ -52,7 +58,8 @@
   left: 700px;
 
 }
-.car2 img{
+
+.car2 img {
   box-shadow: 1px 1px darkred;
 }
 
@@ -71,22 +78,239 @@
   top: 159px;
   left: 710px;
 }
-.satelit1-car2 img{
+
+.satelit1-car2 img {
   box-shadow: 1px 1px darkred;
 }
-.satelit2-car2 img{
+
+.satelit2-car2 img {
   box-shadow: 1px 1px darkred;
 }
-.wrap-board ul{
+
+.wrap-board ul {
   list-style: none;
 }
-.board{
+
+.board {
   position: absolute;
-  width:43px;
-  height:22px ;
+  width: 43px;
+  height: 22px;
   background: yellow;
   box-shadow: 3px 3px orange;
   opacity: 0.9;
   z-index: 9;
+}
+
+.info-board {
+  display: none;
+  margin: 0;
+  padding: 2px;
+  position: absolute;
+  background: dimgray;
+  border-radius: 2px;
+  font-size: 11px;
+  color: whitesmoke;
+  z-index: 10;
+  box-shadow: 1px 1px 1px black;
+}
+
+.wrap-board:hover .info-board {
+  display: block;
+}
+
+.info-board button {
+  margin: 1px;
+}
+
+.info-board p {
+  margin: 2px 0 0 2px;
+}
+
+.info-board:hover {
+  border-radius: 2px;
+  animation: border-light 3s linear forwards;
+}
+
+@keyframes border-light {
+  2% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  3% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  5% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  6% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  7% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  9% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  13% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  16% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  18% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  22% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  34% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  36% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  54% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  100% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230),
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+
+
+}
+
+.btn-close:hover {
+  animation: btn-cl 2s linear forwards;
+}
+
+@keyframes btn-cl {
+  2% {
+    border: 3px solid red;
+    box-shadow: 0 0 15px -1px red,
+    0 0 12px -1px red inset;
+  }
+  3% {
+    border: 3px solid darkred;
+    box-shadow: none;
+  }
+  5% {
+    border: 3px solid red;
+    box-shadow: 0 0 15px -1px red,
+    0 0 12px -1px red inset;
+  }
+  7% {
+    border: 3px solid darkred;
+    box-shadow: none;
+  }
+  10% {
+    border: 3px solid red;
+    box-shadow: 0 0 15px -1px red,
+    0 0 12px -1px red inset;
+  }
+  17% {
+    border: 3px solid darkred;
+    box-shadow: none;
+  }
+  20% {
+    border: 3px solid red;
+    box-shadow: 0 0 15px -1px red,
+    0 0 12px -1px red inset;
+  }
+  40% {
+    border: 3px solid darkred;
+    box-shadow: none;
+  }
+  70% {
+    border: 3px solid red;
+    box-shadow: 0 0 15px -1px red,
+    0 0 12px -1px red inset;
+  }
+  85% {
+    border: 3px solid darkred;
+    box-shadow: none;
+  }
+  100% {
+    border: 3px solid red;
+    box-shadow: 0 0 15px -1px red,
+    0 0 12px -1px red inset;
+  }
+}
+
+.btn-info:hover {
+  animation: btn-inf 3s linear forwards;
+}
+
+@keyframes btn-inf {
+  2% {
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px -1px greenyellow,
+    0 0 12px -1px greenyellow inset;
+  }
+  3% {
+    border: 3px solid green;
+    box-shadow: none;
+  }
+  5% {
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px -1px greenyellow,
+    0 0 12px -1px greenyellow inset;
+  }
+  7% {
+    border: 3px solid green;
+    box-shadow: none;
+  }
+  10% {
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px -1px greenyellow,
+    0 0 12px -1px greenyellow inset;
+  }
+  17% {
+    border: 3px solid green;
+    box-shadow: none;
+  }
+  20% {
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px -1px greenyellow,
+    0 0 12px -1px greenyellow inset;
+  }
+  40% {
+    border: 3px solid green;
+    box-shadow: none;
+  }
+  70% {
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px -1px greenyellow,
+    0 0 12px -1px greenyellow inset;
+  }
+  85% {
+    border: 3px solid green;
+    box-shadow: none;
+  }
+  100% {
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px -1px greenyellow,
+    0 0 12px -1px greenyellow inset;
+  }
 }
 

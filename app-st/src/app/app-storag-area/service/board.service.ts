@@ -14,5 +14,8 @@ export class BoardService {
   onTestBoard(x:number,z:number):Observable<any>{
     return this.http.get(this.host+x+'/'+z)
   }
+  onDeleteBoardBuId(id:number):Observable<any>{
+   return this.http.get(this.host+'delete/'+id)
+  }
 
 }

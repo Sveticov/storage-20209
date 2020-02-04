@@ -37,8 +37,8 @@ export class AppStoragAreaComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
-    this.windowX = window.innerWidth + 'px'
-    this.windowY = window.innerHeight + 'px'
+    this.windowX = window.innerWidth-20 + 'px'
+    this.windowY = window.innerHeight-150 + 'px'
     console.log(this.windowY + " " + this.windowX)
   }
 
@@ -58,5 +58,11 @@ export class AppStoragAreaComponent implements OnInit {
 this.boardService.onTestBoard(parseInt(this.carOne.positionX),parseInt(this.carOne.positionZ))
   .subscribe(boards=>{this.boards=boards;console.log(boards);})
 
+  }
+
+  onDeleteBoard(idBox: number) {
+    this.boardService.onDeleteBoardBuId(idBox).subscribe(
+      boards=>this.boards=boards
+    )
   }
 }

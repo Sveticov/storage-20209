@@ -17,6 +17,8 @@ export class AppPlcComponent implements OnInit {
   plcDataL: PLCData
   plcDataAll: PLCData[]
   answerPLCData: any
+  connectPLC_OK:boolean
+  colorBtnConnect:string
 
   constructor(private plcService: AppPlcServiceService) {
     this.plcDataL = new PLCData()
@@ -38,5 +40,9 @@ export class AppPlcComponent implements OnInit {
   onDeletePLC(id: number) {
     this.plcService.onDeletePLCData(id).subscribe(plcs => this.plcDataAll=plcs)
 
+  }
+
+  onConnectPLC(id: number) {
+this.plcService.onConnectPLC(id).subscribe(connect=>{this.connectPLC_OK=connect;console.log(connect);this.colorBtnConnect='greenyellow'})
   }
 }

@@ -5,6 +5,6 @@ export class Board {
   positionYBox: number;
   quantityBox: number;
   lengthBox: number;
-  withBox: number;
+  widthBox: number;
 
 }

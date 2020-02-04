@@ -1,8 +1,12 @@
+*{
+  font-family: Calibri;
+}
 h3{
   padding: 5px;
   animation-name: color-text;
   animation-duration: 5s ;
   animation-iteration-count: infinite;
+
 }
 @keyframes color-text {
   0%{color: darkred}
@@ -19,6 +23,8 @@ input{
   background-color: darkgrey;
   text-align: center;
 opacity: 0.4;
+  box-shadow: 2px 2px 1px 1px black;
+
 
 }
 input:hover{
@@ -44,6 +50,7 @@ button{
   color: whitesmoke;
   background: rgb(139,139,143);
   background: linear-gradient(335deg, rgba(139,139,143,1) 0%, rgba(108,108,128,1) 35%, rgba(0,0,0,1) 100%);
+  box-shadow: 2px 2px 1px 1px black;
 }
 .border-form{
   /*display: inline-block;*/
@@ -62,5 +69,6 @@ li{
   font-size: 12px;
   font-family: Arial;
   list-style: none;
+  /*color: greenyellow;*/
 
 }

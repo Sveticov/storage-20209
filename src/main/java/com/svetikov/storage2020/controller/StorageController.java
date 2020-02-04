@@ -9,21 +9,29 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/app/storage")
+@RequestMapping("/app/storage/board")
 public class StorageController {
 
-    private ModelService<BoardBox, Integer> modelService;
+    private ModelService<BoardBox, Long> modelService;
 
     @Autowired
     public StorageController(@Qualifier("board") ModelService modelService) {
         this.modelService = modelService;
     }
 
-    @GetMapping("/board/{x}/{z}")
+    @GetMapping("/{x}/{z}")
     public ResponseEntity<List<BoardBox>> addBoard(@PathVariable("x") int x, @PathVariable("z") int z) {
         modelService.saveModel(new BoardBox(x, z, 1250, 1600, 16));
+        return new ResponseEntity<>(modelService.getAllModel(), HttpStatus.OK);
+    }
+
+    @GetMapping("/delete/{id}")
+    public ResponseEntity<List<BoardBox>> deleteBoard(@PathVariable("id") long id) {
+
+        modelService.deleteModel(id);
         return new ResponseEntity<>(modelService.getAllModel(), HttpStatus.OK);
     }
 }

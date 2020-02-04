@@ -60,8 +60,8 @@ public class Storage2020Application implements CommandLineRunner {
 //        plcComponent.onInitDBAreaPLC();
 
 
-        BoardBox boardBox=new BoardBox(1,1,1,1,1);
-modelBoxService.saveModel(boardBox);
+//        BoardBox boardBox=new BoardBox(1,1,1,1,1);
+//modelBoxService.saveModel(boardBox);
 
 
 serviceCarPosition1.setPositionCar(120,340);

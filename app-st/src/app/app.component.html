@@ -2,12 +2,24 @@
   <nav>
     <ul>
       <li><a (click)="showStorageMenu()">Storage</a></li>
-      <li><a (click)="showPLCMenu()">PLC</a></li>
+
+      <li class="dropdown">
+        <a class="dropbtn" >PLC Data</a>
+        <div class="dropdown-content">
+          <a (click)="showPLCMenu()">PLC Address</a>
+          <a  (click)="showPLCDBMenu()">PLC DB</a>
+          <a>spare</a>
+        </div>
+      </li>
+
+
+
     </ul>
   </nav>
 </div>
 
 <app-app-plc *ngIf="onPLCMenu"></app-app-plc>
+<app-plcdb-app *ngIf="onPLCDBMenu"></app-plcdb-app>
 
 <app-app-storag-area *ngIf="onStorageMenu"></app-app-storag-area>
 

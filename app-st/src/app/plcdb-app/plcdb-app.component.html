@@ -1,0 +1,23 @@
+<div class="dbplc-form">
+  <form #plcdbForm="ngForm" (ngSubmit)="plcDbSubmit(plcdbForm)">
+    <input type="text" id="plcName" [(ngModel)]="plcDbData.plcName" name="plcName" ngModel placeholder="plc name">
+    <input list="typeDB" [(ngModel)]="plcDbData.typeDB"  name="typeDB" ngModel placeholder="type db">
+    <datalist id="typeDB">
+      <option value="INT">INT</option>
+      <option value="BYTE">BYTE</option>
+    </datalist>
+    <input type="number"  [(ngModel)]="plcDbData.dbAdr"  name="dbAdr" ngModel placeholder="address db">
+    <input type="number"  [(ngModel)]="plcDbData.dbByte"  name="dbByte" ngModel placeholder="byte db">
+    <input type="number"  [(ngModel)]="plcDbData.dbBit"  name="dbBit" ngModel placeholder="bit db">
+  <button type="submit">Submit</button>
+  </form>
+
+</div>
+<div class="dbplc-info">
+  <div *ngFor="let plcdb of plcDBDataAll">
+    <div class="info-db">{{plcdb|json}}
+    <button (click)="onDeletePLCDB(plcdb.idDB)">Delete</button>
+    </div>
+  </div>
+</div>
+

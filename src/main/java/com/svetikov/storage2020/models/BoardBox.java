@@ -15,15 +15,15 @@ public class BoardBox implements Serializable {
     private int positionYBox;
     private int quantityBox;
     private int lengthBox;
-    private int withBox;
+    private int widthBox;
 
 
-    public BoardBox(int positionX,int positionY,int quantity,int length,int with) {
+    public BoardBox(int positionX,int positionY,int quantity,int length,int width) {
         this.positionXBox=positionX;
         this.positionYBox=positionY;
         this.quantityBox=quantity;
         this.lengthBox=length;
-        this.withBox=with;
+        this.widthBox=width;
     }
 
 

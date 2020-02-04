@@ -2,6 +2,7 @@
   <h3>Warning</h3>
 <form #plcForm="ngForm" (ngSubmit)="plcSubmit(plcForm)">
 <div>
+  <input type="text" id="plcName" [(ngModel)]="plcDataL.plcName" name="plcName" ngModel placeholder="plc name: ">
 <!--  <label for="adrIP">ip address:</label>-->
   <input type="text" id="adrIP" [(ngModel)]="plcDataL.adrIP" name="adrIP" ngModel placeholder="ip address: ">
 
@@ -31,7 +32,9 @@
   <div>
     <ul *ngFor="let plc of plcDataAll">
       <li>{{plc|json}}
-      <button (click)="onDeletePLC(plc.id)">Delete</button> </li>
+      <button (click)="onDeletePLC(plc.id)">Delete</button>
+      <button (click)="onConnectPLC(plc.id)" [ngStyle]="{'background-color':colorBtnConnect}">Connect</button>
+      </li>
     </ul>
   </div>
 </div>

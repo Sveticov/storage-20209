@@ -7,12 +7,14 @@ import {AppPlcComponent} from './app-plc/app-plc.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AppStoragAreaComponent } from './app-storag-area/app-storag-area.component';
+import { PlcdbAppComponent } from './plcdb-app/plcdb-app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppPlcComponent,
-    AppStoragAreaComponent
+    AppStoragAreaComponent,
+    PlcdbAppComponent
   ],
   imports: [
     BrowserModule,

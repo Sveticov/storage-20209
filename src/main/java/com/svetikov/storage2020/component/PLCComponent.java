@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import si.trina.moka7.live.PLC;
 import si.trina.moka7.live.PLCListener;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 @Slf4j
 public class PLCComponent {
     private PLC plc;
+    private Map<String, PLC> plcMap =new ConcurrentHashMap<>();
     @Qualifier("plc")
-    private final ModelService<PLCData,Integer> modelService;
+    private final ModelService<PLCData, Integer> modelService;
 
     @Autowired
     public PLCComponent(@Qualifier("plc") ModelService modelService) {
@@ -23,8 +27,8 @@ public class PLCComponent {
     public void onInitPLC() throws Exception {
         log.info("on init plc");
         for (PLCData plcData : this.modelService.getAllModel()) {
-            log.info("plc data list "+plcData.toString());
-            this.plc = new PLC(plcData.getId() + "plc", plcData.getAdrIP(),
+            log.info("plc data list " + plcData.toString());
+            this.plc = new PLC(plcData.getPlcName(), plcData.getAdrIP(),
                     plcData.getLengthRead(),
                     plcData.getLengthWrite(),
                     plcData.getDbRead(),
@@ -38,6 +42,7 @@ public class PLCComponent {
             plc.listeners.add(plcListener);
             Thread threadPLC = new Thread(plc);
             threadPLC.start();
+            plcMap.put(plc.PLCName,plc);
             Thread.sleep(3000);
             log.info("plc connect " + plcData.getId() + "  " + plc.connected);
 
@@ -65,6 +70,9 @@ public class PLCComponent {
         log.info("on Init DB Area PLC");
         log.info("connect " + plc.connected + "  " + Thread.currentThread().getName());
         log.info("adr " + plc.getDInt(true, 0));
+
+
+
 
     }
 }

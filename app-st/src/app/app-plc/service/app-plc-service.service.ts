@@ -24,6 +24,9 @@ export class AppPlcServiceService {
   onDeletePLCData(id:number):Observable<any>{
     return this.http.get(this.host+'delete/'+id)
   }
+  onConnectPLC(id:number):Observable<any>{
+    return this.http.get(this.host+'connect/'+id)
+  }
 
 
 }
